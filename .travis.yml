@@ -11,7 +11,7 @@ addons:
 
 env:
   global:
-    - secure: "gEVErE2dmw/04W70NKNM+uvKAefGyHF1opYTWpwNWgca/Me0EY7qtvKLWStDUUy/XhM7U1iTPvo8T8Xw4zSyU8Z2n+g3oBOBMojZ7EU8WxAIuSXWUB/LeDEfcno2ajmSv91n18GFGw6IQeIidWbwRGLW/1Hmv3EPxg1lfcmu7jaFWjIB8meOZHf5HGxDBp0rLbYVyslXWMofUn10lPh2ScVApn+YyPzv1mzgEN1wchJ4spm4lp0iUWdgG61DZoqA/Y/j4P9xT/ckSv+Hdh1RNOskI0oN2Rp/atoOj9kzYI4/L2O3No36J9kMcC7xV38HGYZrKJq0h8/92MbmTjoiiOSeoU3duV/0Y72fVOA5llnpQQnds8oGNUJlm0nMVybGoW2ZzoklN1PBHc5Hd+7x1YGnCtqh8kS5e3nc2diSI1OqLCondKVzZTVBGkS/CZyQiBr8g709SytM04rQkfP3EAb3fiEChmLJPqX6gS887VYCBixRiT71lDLzPeQ2F0Rw12uxS1QFWRert85jPA9yF0oCHx8KQ+4PQ7s3B8pLscjkMokfCKkaf+npB/1Irl/N+Bucoc924AAODzw5+iGmveezt7iEZ8/RddMozPRAGHcTiMylk/bU4lmoPMZLfcfS2HsxO4hwXoLDuC+neh1Uj4vrqfQAGvKW2thEPiYEb5Q="
+    - secure: "MEGZ2YSSoB3kNAbBpsFBzh7WQjO6aOEtfeOimEBQoASKXE7Lr0FkpyoVt9qXZnlbJa/5zR5YUU28jkFxKVFkSbtWJX7JLjM1zk7I+VLUlK6FxGzGj8DyXEJLCXu64xPZBpeuaTD1xAVPlVFhwNCU9mwEbFaBHfy1+xIhYm32sZyDZUGRlJdzBH6EZyyeRlZt56UmAE/h3HA5HRSl5C86/1KUXnX1LIkzqeRfZWiagkDFqMDrgSd2Ynx4yWYRJDUEVb+qNkqerX1O6DZavwM6BE3/4P6eGheEWUqAxW71KWXUzXl83wHpyo9pmr3MwXuhCsS3e/cjJDr5XkI4R8dPgiD3plJnA1QMZxZOuyUJMjKs0x/2n+fYWiLQMgS8boZOJbDT0hr7+X36hjiKz5aLN7aPzgoryYh+c+nngpDpbB9CBto9VjKW570olDbGnnC+BzFXsek/blXGgb6mskaSj3E+jPWafXKzRzwXKjXaCt3UgwnOV9WuEYdY9fL36zqZnINQ4vh9+tP6+AbvlnnueiUrLbrwHcOE/nXT5kfKybIS48sXfL/JwyFUAxT0K2l3ZpiROe6OQv03SOqYiORtmhJrc14Im8h8Y2LEjzew1uhJsaPl9017kJgRW4Fm3PR8ItnJFsp6r7L3MSgm2kVoN6pKYo+X0J/yN+jD+cDCwgM="
   matrix:
     - OUTLANG=java
 #    - OUTLANG=kotlin
@@ -22,14 +22,11 @@ install:
   - travis_retry wget http://central.maven.org/maven2/io/swagger/swagger-codegen-cli/2.2.3/swagger-codegen-cli-2.2.3.jar -O swagger-codegen-cli.jar
   - export APIVERSION=`curl -s 'https://www.thebluealliance.com/swagger/api_v3.json' | jq -r '.info.version'`
 
-before_script:
-  - git clone https://${GH_TOKEN}@github.com/fletch3555/tba-api-client-$OUTLANG.git tba-api-client-$OUTLANG
-
 script:
   - ./codegen.sh
 
 after_success:
-  - ./commit.sh
+  - tba-api-client-$OUTLANG/git_push.sh fletch3555 tba-api-client-$OUTLANG "Updating to API version $APIVERSION"
 
 after_failure:
   - cat test_failures.temp
