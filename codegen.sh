@@ -6,8 +6,6 @@ export PACKAGE="com.thebluealliance.api.v3"
 
 mkdir -p $OUT_PATH
 
-java -jar swagger-codegen-cli.jar config-help -l $OUTLANG
-
 export OPTIONS="-i $SWGR_PATH -l $OUTLANG -o $OUT_PATH"
 
 export OPTIONS="$OPTIONS -DhideGenerationTimestamp=true --api-package $PACKAGE --model-package $PACKAGE.model"
