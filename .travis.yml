@@ -23,7 +23,7 @@ install:
   - export APIVERSION=`curl -s 'https://www.thebluealliance.com/swagger/api_v3.json' | jq -r '.info.version'`
 
 script:
-#  - java -jar swagger-codegen-cli.jar config-help -l $OUTLANG
+  - java -jar swagger-codegen-cli.jar config-help -l $OUTLANG
   - ./codegen.sh
 
 #after_success:

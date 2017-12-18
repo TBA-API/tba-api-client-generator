@@ -8,9 +8,9 @@ mkdir -p $OUT_PATH
 export OPTIONS="-i $SWGR_PATH -l $OUTLANG -o $OUT_PATH -c configs/$OUTLANG-config.json"
 
 if [ "$OUTLANG" == "python" ] ; then
-  export OPTIONS="$OPTIONS --packageVersion $APIVERSION"
+  export OPTIONS="$OPTIONS --package-version $APIVERSION"
 else
-  export OPTIONS="$OPTIONS --artifactVersion $APIVERSION"
+  export OPTIONS="$OPTIONS --artifact-version $APIVERSION"
 fi
 
 java -jar swagger-codegen-cli.jar generate $OPTIONS
