@@ -14,20 +14,21 @@ env:
     - secure: "MEGZ2YSSoB3kNAbBpsFBzh7WQjO6aOEtfeOimEBQoASKXE7Lr0FkpyoVt9qXZnlbJa/5zR5YUU28jkFxKVFkSbtWJX7JLjM1zk7I+VLUlK6FxGzGj8DyXEJLCXu64xPZBpeuaTD1xAVPlVFhwNCU9mwEbFaBHfy1+xIhYm32sZyDZUGRlJdzBH6EZyyeRlZt56UmAE/h3HA5HRSl5C86/1KUXnX1LIkzqeRfZWiagkDFqMDrgSd2Ynx4yWYRJDUEVb+qNkqerX1O6DZavwM6BE3/4P6eGheEWUqAxW71KWXUzXl83wHpyo9pmr3MwXuhCsS3e/cjJDr5XkI4R8dPgiD3plJnA1QMZxZOuyUJMjKs0x/2n+fYWiLQMgS8boZOJbDT0hr7+X36hjiKz5aLN7aPzgoryYh+c+nngpDpbB9CBto9VjKW570olDbGnnC+BzFXsek/blXGgb6mskaSj3E+jPWafXKzRzwXKjXaCt3UgwnOV9WuEYdY9fL36zqZnINQ4vh9+tP6+AbvlnnueiUrLbrwHcOE/nXT5kfKybIS48sXfL/JwyFUAxT0K2l3ZpiROe6OQv03SOqYiORtmhJrc14Im8h8Y2LEjzew1uhJsaPl9017kJgRW4Fm3PR8ItnJFsp6r7L3MSgm2kVoN6pKYo+X0J/yN+jD+cDCwgM="
   matrix:
     - OUTLANG=java
-#    - OUTLANG=kotlin
-#    - OUTLANG=php
-#    - OUTLANG=python
+    - OUTLANG=kotlin
+    - OUTLANG=php
+    - OUTLANG=python
 
 install:
   - travis_retry wget http://central.maven.org/maven2/io/swagger/swagger-codegen-cli/2.2.3/swagger-codegen-cli-2.2.3.jar -O swagger-codegen-cli.jar
   - export APIVERSION=`curl -s 'https://www.thebluealliance.com/swagger/api_v3.json' | jq -r '.info.version'`
 
 script:
-  - ./codegen.sh
+  - java -jar swagger-codegen-cli.jar config-help -l $OUTLANG
+#  - ./codegen.sh
 
-after_success:
-  - chmod +x tba-api-client-$OUTLANG/git_push.sh
-  - tba-api-client-$OUTLANG/git_push.sh fletch3555 tba-api-client-$OUTLANG "Updating to API version $APIVERSION"
+#after_success:
+#  - chmod +x tba-api-client-$OUTLANG/git_push.sh
+#  - tba-api-client-$OUTLANG/git_push.sh fletch3555 tba-api-client-$OUTLANG "Updating to API version $APIVERSION"
 
 after_failure:
   - cat test_failures.temp
