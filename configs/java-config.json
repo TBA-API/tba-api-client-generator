@@ -1,0 +1,8 @@
+{
+  "hideGenerationTimestamp" : "true",
+  "invokerPackage"          : "net.thefletcher.tbaapi.v3client",
+  "apiPackage"              : "net.thefletcher.tbaapi.v3client.api",
+  "modelPackage"            : "net.thefletcher.tbaapi.v3client.model",
+  "groupId"                 : "net.thefletcher.tbaapi.v3",
+  "artifactId"              : "tba-api-v3client"
+}
