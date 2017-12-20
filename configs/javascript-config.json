@@ -1,5 +1,5 @@
 {
   "hideGenerationTimestamp" : "true",
   "invokerPackage"          : "TBAAPI.Client",
-  "projectName"             : "TBAAPIClient",
+  "projectName"             : "tba-api-v3client",
 }
