@@ -28,8 +28,7 @@ script:
 
 after_success:
   - cd tba-api-client-$OUTLANG
-  - chmod +x git_push.sh
-  - ./git_push.sh fletch3555 tba-api-client-$OUTLANG "Updating to API version $APIVERSION"
+  - ../git_push.sh fletch3555 tba-api-client-$OUTLANG "Updating to API version $APIVERSION"
   - cd ..
 
 after_failure:
