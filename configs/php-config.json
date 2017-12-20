@@ -1,5 +1,6 @@
 {
   "hideGenerationTimestamp" : "true",
+  "packagePath"             : "TBAAPIClient",
   "invokerPackage"          : "TBAAPI\\Client",
   "apiPackage"              : "TBAAPI\\Client\\api",
   "modelPackage"            : "TBAAPI\\Client\\model",
