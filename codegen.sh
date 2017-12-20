@@ -8,7 +8,7 @@ mkdir -p $OUT_PATH
 export OPTIONS="-i $SWGR_PATH -l $OUTLANG -o $OUT_PATH -c configs/$OUTLANG-config.json"
 
 if [ "$OUTLANG" = "python" ] ; then
-  export OPTIONS="$OPTIONS --package-version $APIVERSION"
+  export OPTIONS="$OPTIONS --packageVersion $APIVERSION"
 else
   export OPTIONS="$OPTIONS --artifact-version $APIVERSION"
 fi
