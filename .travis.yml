@@ -26,8 +26,10 @@ script:
   - ./codegen.sh
 
 after_success:
-  - chmod +x tba-api-client-$OUTLANG/git_push.sh
-  - tba-api-client-$OUTLANG/git_push.sh fletch3555 tba-api-client-$OUTLANG "Updating to API version $APIVERSION"
+  - cd tba-api-client-$OUTLANG
+  - chmod +x git_push.sh
+  - git_push.sh fletch3555 tba-api-client-$OUTLANG "Updating to API version $APIVERSION"
+  - cd ..
 
 after_failure:
   - cat test_failures.temp
