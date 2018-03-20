@@ -23,7 +23,7 @@ if [ "$release_note" = "" ]; then
     echo "[INFO] No command line input provided. Set \$release_note to $release_note"
 fi
 
-if [ "$tag_version" = "" ]; then
+if [ "$tag_version" = "v" ]; then
     echo "[INFO] No command line input provided. Set \$tag_version if you want to create a tag"
 fi
 
@@ -51,7 +51,7 @@ fi
 
 git pull origin master
 
-if [ "$tag_version" != "" ]; then
+if [ "$tag_version" != "v" ]; then
 	if git rev-parse "$tag_version^{tag}" >/dev/null 2>&1
 	then
 		echo "[WARN] Tag $tag_version already exists!"
