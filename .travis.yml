@@ -35,7 +35,7 @@ script:
 
 after_success:
   - cd $REPO_NAME
-  - ../git_push.sh $USER_NAME $REPO_NAME "Updating to API version $APIVERSION"
+  - ../git_push.sh $USER_NAME $REPO_NAME "Updating to API version $APIVERSION" "v$APIVERSION"
   - cd ..
 
 after_failure:
