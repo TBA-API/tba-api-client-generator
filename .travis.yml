@@ -27,7 +27,7 @@ env:
     - OUTLANG=go
 
 install:
-  - travis_retry wget http://central.maven.org/maven2/io/swagger/swagger-codegen-cli/2.2.3/swagger-codegen-cli-2.2.3.jar -O swagger-codegen-cli.jar
+  - travis_retry wget http://central.maven.org/maven2/io/swagger/swagger-codegen-cli/2.3.1/swagger-codegen-cli-2.3.1.jar -O swagger-codegen-cli.jar
   - export APIVERSION=`curl -s 'https://www.thebluealliance.com/swagger/api_v3.json' | jq -r '.info.version'`
 
 before_script:
