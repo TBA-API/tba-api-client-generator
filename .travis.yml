@@ -28,7 +28,7 @@ env:
 
 install:
   - travis_retry wget http://central.maven.org/maven2/io/swagger/swagger-codegen-cli/2.3.1/swagger-codegen-cli-2.3.1.jar -O swagger-codegen-cli.jar
-  - export APIVERSION=`curl -s 'https://www.thebluealliance.com/swagger/api_v3.json' | jq -r '.info.version'`
+  - export APIVERSION=`curl -s https://raw.githubusercontent.com/tweirtx/the-blue-alliance/json-fix/static/swagger/api_v3.json' | jq -r '.info.version'`
 
 before_script:
   - export REPO_NAME="tba-api-client-$OUTLANG"
