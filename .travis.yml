@@ -1,48 +1,40 @@
 language: java
-
 jdk: oraclejdk8
-
 sudo: false
-
 addons:
   apt:
     packages:
-      - jq
-
+    - jq
 env:
   global:
-    - secure: "MEGZ2YSSoB3kNAbBpsFBzh7WQjO6aOEtfeOimEBQoASKXE7Lr0FkpyoVt9qXZnlbJa/5zR5YUU28jkFxKVFkSbtWJX7JLjM1zk7I+VLUlK6FxGzGj8DyXEJLCXu64xPZBpeuaTD1xAVPlVFhwNCU9mwEbFaBHfy1+xIhYm32sZyDZUGRlJdzBH6EZyyeRlZt56UmAE/h3HA5HRSl5C86/1KUXnX1LIkzqeRfZWiagkDFqMDrgSd2Ynx4yWYRJDUEVb+qNkqerX1O6DZavwM6BE3/4P6eGheEWUqAxW71KWXUzXl83wHpyo9pmr3MwXuhCsS3e/cjJDr5XkI4R8dPgiD3plJnA1QMZxZOuyUJMjKs0x/2n+fYWiLQMgS8boZOJbDT0hr7+X36hjiKz5aLN7aPzgoryYh+c+nngpDpbB9CBto9VjKW570olDbGnnC+BzFXsek/blXGgb6mskaSj3E+jPWafXKzRzwXKjXaCt3UgwnOV9WuEYdY9fL36zqZnINQ4vh9+tP6+AbvlnnueiUrLbrwHcOE/nXT5kfKybIS48sXfL/JwyFUAxT0K2l3ZpiROe6OQv03SOqYiORtmhJrc14Im8h8Y2LEjzew1uhJsaPl9017kJgRW4Fm3PR8ItnJFsp6r7L3MSgm2kVoN6pKYo+X0J/yN+jD+cDCwgM="
-    - SPEC_FILE: "https://raw.githubusercontent.com/tweirtx/the-blue-alliance/json-fix/static/swagger/api_v3.json"
-    - USER_NAME: "fletch3555"
-    - GITHUB_ORG: "TBA-API"
-    - SCG_VERSION: "2.3.1"
+  - SPEC_FILE: https://raw.githubusercontent.com/tweirtx/the-blue-alliance/json-fix/static/swagger/api_v3.json
+  - USER_NAME: tweirtx
+  - GITHUB_ORG: TBA-API
+  - SCG_VERSION: 2.3.1
+  - secure: owKltrbCinLD/PG5heH2XzVClZqo0Elv1m+oT1RtKsLycnT45dz2GpWtIG2JyEnIEsQLd0oKaLEpfeBMJ0+3ZDT4rGLWDk3AYlZRGNpgQlZ2Uy2hjgoqMkSMnQJV0T6p8XCaog2GTGo/RIdpGtfUtGp8z1HYp2kKy57K9C6WMdL57755kqzwkOvyvIG1UDlRNpj6+018uISGUjGBnmtfljJ2fLrtCkl/DK0jgraylUokcGDKGIdXOxby78S8UjaokPtKi27b/9uTa/Kn1VL+WD1NzZ5DKJdmV1arikmaqcyr5c/8kw/Gw4KXibShI9+ZoZcrcYKRY4dVTWkNQ/o59xin8PFhilE8wtpUUt3afzfRA5lFjw58v7YZ5vEbFe5BAEZLDMlCiNCJhdFn+PDLXiKL3xzy2fZiYhHz7iLLuYo2qJgleUnCjL6Tad+j8LIbBlWCGs0f379PAvvMGhhzqpmT8ejsIhytZFo329Pq8p0xW/01Rl8ksIMrzvGCWL4BEboWxkVIzssscAp7enoWon4+4fD52FJo3nu+DWVdn2xk5KwJ9J97Z3prlvomJ8E63mwby/K95JWp+Etas2BVM4G8CZJKZSag0aU84iQH+IX76wJyjLLDJygOIYCyitFc9Cj9e9f8AzyDkInnFtPmK/R6lxO3pODcZD6Zn7Py6XQ=
   matrix:
-    - OUTLANG=java
-    - OUTLANG=kotlin
-    - OUTLANG=php
-    - OUTLANG=python
-    - OUTLANG=javascript
-    - OUTLANG=csharp
-    - OUTLANG=swift
-    - OUTLANG=ruby
-    - OUTLANG=go
-
+  - OUTLANG=java
+  - OUTLANG=kotlin
+  - OUTLANG=php
+  - OUTLANG=python
+  - OUTLANG=javascript
+  - OUTLANG=csharp
+  - OUTLANG=swift
+  - OUTLANG=ruby
+  - OUTLANG=go
 install:
-  - travis_retry wget http://central.maven.org/maven2/io/swagger/swagger-codegen-cli/$SCG_VERSION/swagger-codegen-cli-$SCG_VERSION.jar -O swagger-codegen-cli.jar
-  - export APIVERSION=`curl -s $SPEC_FILE | jq -r '.info.version'`
-
+- travis_retry wget http://central.maven.org/maven2/io/swagger/swagger-codegen-cli/$SCG_VERSION/swagger-codegen-cli-$SCG_VERSION.jar
+  -O swagger-codegen-cli.jar
+- export APIVERSION=`curl -s $SPEC_FILE | jq -r '.info.version'`
 before_script:
-  - export REPO_NAME="tba-api-client-$OUTLANG"
-  - git clone https://$USER_NAME:$GIT_TOKEN@github.com/$GITHUB_ORG/$REPO_NAME.git
-  
+- export REPO_NAME="tba-api-client-$OUTLANG"
+- git clone https://$USER_NAME:$GIT_TOKEN@github.com/$GITHUB_ORG/$REPO_NAME.git
 script:
-  - java -jar swagger-codegen-cli.jar config-help -l $OUTLANG
-  - ./codegen.sh
-
+- java -jar swagger-codegen-cli.jar config-help -l $OUTLANG
+- "./codegen.sh"
 after_success:
-  - cd $REPO_NAME
-  - ../git_push.sh $USER_NAME $REPO_NAME "Updating to API version $APIVERSION" "v$APIVERSION"
-  - cd ..
-
+- cd $REPO_NAME
+- ../git_push.sh $USER_NAME $REPO_NAME "Updating to API version $APIVERSION" "v$APIVERSION"
+- cd ..
 after_failure:
-  - cat test_failures.temp
+- cat test_failures.temp
