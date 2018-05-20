@@ -14,6 +14,7 @@ env:
     - secure: "MEGZ2YSSoB3kNAbBpsFBzh7WQjO6aOEtfeOimEBQoASKXE7Lr0FkpyoVt9qXZnlbJa/5zR5YUU28jkFxKVFkSbtWJX7JLjM1zk7I+VLUlK6FxGzGj8DyXEJLCXu64xPZBpeuaTD1xAVPlVFhwNCU9mwEbFaBHfy1+xIhYm32sZyDZUGRlJdzBH6EZyyeRlZt56UmAE/h3HA5HRSl5C86/1KUXnX1LIkzqeRfZWiagkDFqMDrgSd2Ynx4yWYRJDUEVb+qNkqerX1O6DZavwM6BE3/4P6eGheEWUqAxW71KWXUzXl83wHpyo9pmr3MwXuhCsS3e/cjJDr5XkI4R8dPgiD3plJnA1QMZxZOuyUJMjKs0x/2n+fYWiLQMgS8boZOJbDT0hr7+X36hjiKz5aLN7aPzgoryYh+c+nngpDpbB9CBto9VjKW570olDbGnnC+BzFXsek/blXGgb6mskaSj3E+jPWafXKzRzwXKjXaCt3UgwnOV9WuEYdY9fL36zqZnINQ4vh9+tP6+AbvlnnueiUrLbrwHcOE/nXT5kfKybIS48sXfL/JwyFUAxT0K2l3ZpiROe6OQv03SOqYiORtmhJrc14Im8h8Y2LEjzew1uhJsaPl9017kJgRW4Fm3PR8ItnJFsp6r7L3MSgm2kVoN6pKYo+X0J/yN+jD+cDCwgM="
     - SPEC_FILE: "https://www.thebluealliance.com/swagger/api_v3.json"
     - USER_NAME: "fletch3555"
+    - GITHUB_ORG: "TBA-API"
   matrix:
     - OUTLANG=java
     - OUTLANG=kotlin
@@ -27,7 +28,7 @@ install:
 
 before_script:
   - export REPO_NAME="tba-api-client-$OUTLANG"
-  - git clone https://$USER_NAME:$GIT_TOKEN@github.com/$USER_NAME/$REPO_NAME.git
+  - git clone https://$USER_NAME:$GIT_TOKEN@github.com/$GITHUB_ORG/$REPO_NAME.git
   
 script:
   - java -jar swagger-codegen-cli.jar config-help -l $OUTLANG
