@@ -15,6 +15,7 @@ env:
     - SPEC_FILE: "https://raw.githubusercontent.com/tweirtx/the-blue-alliance/json-fix/static/swagger/api_v3.json"
     - USER_NAME: "fletch3555"
     - GITHUB_ORG: "TBA-API"
+    - SCG_VERSION: "2.3.1"
   matrix:
     - OUTLANG=java
     - OUTLANG=kotlin
@@ -27,7 +28,7 @@ env:
     - OUTLANG=go
 
 install:
-  - travis_retry wget http://central.maven.org/maven2/io/swagger/swagger-codegen-cli/2.3.1/swagger-codegen-cli-2.3.1.jar -O swagger-codegen-cli.jar
+  - travis_retry wget http://central.maven.org/maven2/io/swagger/swagger-codegen-cli/$SCG_VERSION/swagger-codegen-cli-$SCG_VERSION.jar -O swagger-codegen-cli.jar
   - export APIVERSION=`curl -s $SPEC_FILE | jq -r '.info.version'`
 
 before_script:
