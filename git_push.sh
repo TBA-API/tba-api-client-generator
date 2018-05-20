@@ -42,9 +42,9 @@ if [ "$git_remote" = "" ]; then # git remote not defined
 
     if [ "$GIT_TOKEN" = "" ]; then
         echo "[INFO] \$GIT_TOKEN (environment variable) is not set. Using the git crediential in your environment."
-        git remote add origin https://github.com/${git_user_id}/${git_repo_id}.git
+        git remote add origin https://github.com/${github_org}/${git_repo_id}.git
     else
-        git remote add origin https://${git_user_id}:${GIT_TOKEN}@github.com/${git_user_id}/${git_repo_id}.git
+        git remote add origin https://${git_user_id}:${GIT_TOKEN}@github.com/${github_org}/${git_repo_id}.git
     fi
 
 fi
@@ -61,6 +61,6 @@ if [ "$tag_version" != "v" ]; then
 fi
 
 # Pushes (Forces) the changes in the local repository up to the remote repository
-echo "Git pushing to https://github.com/${git_user_id}/${git_repo_id}.git"
+echo "Git pushing to https://github.com/${github_org}/${git_repo_id}.git"
 git push origin master --tags 2>&1 | grep -v 'To https'
 
