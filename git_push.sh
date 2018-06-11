@@ -61,6 +61,6 @@ if [ "$tag_version" != "v" ]; then
 fi
 
 # Pushes (Forces) the changes in the local repository up to the remote repository
-echo "Git pushing to https://github.com/${github_org}/${git_repo_id}.git"
+echo "Git pushing to https://github.com/${GITHUB_ORG}/${git_repo_id}.git"
 git push origin master --tags 2>&1 | grep -v 'To https'
 
