@@ -7,7 +7,7 @@ addons:
     - jq
 env:
   global:
-  - SPEC_FILE: https://raw.githubusercontent.com/tweirtx/the-blue-alliance/json-fix/static/swagger/api_v3.json
+  - SPEC_FILE: https://www.thebluealliance.com/swagger/api_v3.json
   - USER_NAME: tweirtx
   - GITHUB_ORG: TBA-API
   - SCG_VERSION: 2.3.1
