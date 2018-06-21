@@ -1,4 +1,5 @@
 {
   "hideGenerationTimestamp": "true",
-  "packageName" : "com.tweirtx.TBAAPIv3client"
+  "packageName" : "com.tweirtx.TBAAPIv3client",
+  "packageGuid": "[Guid("E1ED042D-D34B-43B1-B8BD-A6CEF39D9209")]"
 }
