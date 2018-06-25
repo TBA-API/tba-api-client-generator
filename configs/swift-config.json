@@ -1,0 +1,5 @@
+{
+  "projectname": "tba-api-v3-client",
+  "podSummary": "Swift client library for the The Blue Alliance API",
+  "swiftUseApiNamespace": true
+}
