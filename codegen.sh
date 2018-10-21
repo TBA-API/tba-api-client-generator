@@ -1,6 +1,10 @@
 #! /usr/bin/env sh
-
-export OPTIONS="-i $SPEC_FILE -l $OUTLANG -o $REPO_NAME -c configs/$OUTLANG-config.json"
+if ["$OUTLANG" = "swift"] ; then
+  export GENLANG="swift4"
+ else:
+  export GENLANG="$OUTLANG"
+fi
+export OPTIONS="-i $SPEC_FILE -l $GENLANG -o $REPO_NAME -c configs/$OUTLANG-config.json"
 
 #if [ "$OUTLANG" = "python" ] ; then
 #  export OPTIONS="$OPTIONS --package-version $APIVERSION"
