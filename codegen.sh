@@ -9,7 +9,7 @@ export OPTIONS="-i $SPEC_FILE -l $GENLANG -o $REPO_NAME -c configs/$OUTLANG-conf
 
 if [ "$OUTLANG" = "csharp" ] ; then
     echo Triggering appveyor cron
-    curl https://ci.appveyor.com/api/github/webhook?id=h7fwkivddr5elib9 --data null
+    date +%s > gentimestamp.txt
 fi
 
 
