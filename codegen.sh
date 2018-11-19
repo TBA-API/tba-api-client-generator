@@ -9,7 +9,7 @@ export OPTIONS="-i $SPEC_FILE -l $GENLANG -o $REPO_NAME -c configs/$OUTLANG-conf
 
 if [ "$OUTLANG" = "csharp" ] ; then
     echo Triggering appveyor cron
-    date +%s > gentimestamp.txt
+    date +%s > $REPO_NAME/gentimestamp.txt
 fi
 
 
