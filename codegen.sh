@@ -8,7 +8,7 @@ export OPTIONS="-i $SPEC_FILE -l $GENLANG -o $REPO_NAME -c configs/$OUTLANG-conf
 
 
 if [ "$OUTLANG" = "csharp" ] ; then
-    curl "https://ci.appveyor.com/api/github/webhook?id=h7fwkivddr5elib9"
+    curl https://ci.appveyor.com/api/github/webhook?id=h7fwkivddr5elib9
 fi
 
 
