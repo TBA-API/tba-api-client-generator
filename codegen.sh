@@ -14,6 +14,6 @@ export OPTIONS="-i $SPEC_FILE -l $GENLANG -o $REPO_NAME -c configs/$OUTLANG-conf
 #fi
 echo $OPTIONS
 echo $APIVERSION
-java -jar swagger-codegen-cli.jar generate $OPTIONS
+java -jar openapi-generator-cli.jar generate $OPTIONS
 
 ls -al $REPO_NAME
