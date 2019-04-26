@@ -1,5 +1,5 @@
 {
   "hideGenerationTimestamp" : "true",
-  "packageName"             : "net.thefletcher.tbaapi.v3client",
+  "packageName"             : "tbaapiv3client",
   "projectName"             : "tba-api-v3client"
 }
