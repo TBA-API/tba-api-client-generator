@@ -27,7 +27,6 @@ install:
 before_script:
 - export REPO_NAME="tba-api-client-$OUTLANG"
 - git clone https://$USER_NAME:$GIT_TOKEN@github.com/$GITHUB_ORG/$REPO_NAME.git
-- openapi-generator config-help -g $OUTLANG
 script:
 - "./codegen.sh"
 after_success:
