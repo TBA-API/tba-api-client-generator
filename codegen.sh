@@ -14,6 +14,6 @@ export OPTIONS="-i $SPEC_FILE -g $GENLANG -o $REPO_NAME -c configs/$OUTLANG-conf
 #fi
 echo $OPTIONS
 echo $APIVERSION
-openapi-generator-cli generate $OPTIONS
+openapi-generator generate $OPTIONS
 
 ls -al $REPO_NAME
