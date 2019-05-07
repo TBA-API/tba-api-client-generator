@@ -3,7 +3,5 @@
 	"moduleName": "TBA API v3 Ruby Client",
 	"gemHomePage": "https://thebluealliance.com",
 	"gemSummary": "A Ruby wrapper for The Blue Alliance",
-	"gemDescription": "A Ruby wrapper for The Blue Alliance",
-	"gemVersion"          : "$API_VERSION"
-
+	"gemDescription": "A Ruby wrapper for The Blue Alliance"
 }

@@ -1,7 +1,5 @@
 {
   "hideGenerationTimestamp": "true",
   "packageName" : "com.tweirtx.TBAAPIv3client",
-  "packageGuid": "62BADEDE-E7D9-48EA-95BF-79D7812A5068",
-  "packageVersion"          : "$API_VERSION"
-
+  "packageGuid": "62BADEDE-E7D9-48EA-95BF-79D7812A5068"
 }

@@ -1,6 +1,5 @@
 {
   "hideGenerationTimestamp" : "true",
   "packageName"             : "tbaapiv3client",
-  "projectName"             : "tba-api-v3client",
-  "packageVersion"          : "$API_VERSION"
+  "projectName"             : "tba-api-v3client"
 }
