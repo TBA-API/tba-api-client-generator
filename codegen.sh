@@ -14,7 +14,6 @@ export OPTIONS="-i $SPEC_FILE -g $GENLANG -o $REPO_NAME -c configs/$OUTLANG-conf
 #fi
 echo $OPTIONS
 echo $APIVERSION
-echo $APIVERSION > $REPO_NAME/api_version.txt
 java -jar openapi-generator-cli.jar generate $OPTIONS
 
 ls -al $REPO_NAME
