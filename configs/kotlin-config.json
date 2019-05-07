@@ -1,5 +1,7 @@
 {
   "packageName"          : "net.thefletcher.tbaapi.v3client",
   "groupId"              : "net.thefletcher.tbaapi.v3",
-  "artifactId"           : "tba-api-v3client"
+  "artifactId"           : "tba-api-v3client",
+  "artifactVersion"          : "$API_VERSION"
+
 }

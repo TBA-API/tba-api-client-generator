@@ -3,5 +3,7 @@
   "podSummary": "Swift client library for the The Blue Alliance API",
   "swiftUseApiNamespace": true,
   "podSource": "https://github.com/TBA-API/tba-api-client-swift",
-  "unwrapRequired": true
+  "unwrapRequired": true,
+  "podVersion": "$API_VERSION"
+
 }

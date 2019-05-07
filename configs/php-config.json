@@ -6,5 +6,7 @@
   "modelPackage"            : "TBAAPI\\Client\\model",
   "artifactId"              : "tba-api-v3client",
   "gitUserId"               : "fletch3555",
-  "gitRepoId"               : "tba-api-client-php"
+  "gitRepoId"               : "tba-api-client-php",
+  "artifactVersion"          : "$API_VERSION"
+
 }
