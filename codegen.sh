@@ -1,5 +1,5 @@
 #! /usr/bin/env bash
-if [[ "$OUTLANG"==="swift" ]]; then
+if [[ "$OUTLANG"=="swift" ]]; then
     export GENLANG="swift4"
 else
     export GENLANG="$OUTLANG"
