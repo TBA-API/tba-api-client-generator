@@ -1,8 +1,7 @@
 import os
-print(os.getenv('OUTLANG'))
 if os.getenv('OUTLANG') == 'swift':
-    print("Swift")
-    os.putenv('GENLANG', 'swift4')
+    genlang = 'swift4'
 else:
-    print('Not Swift')
-    os.putenv('GENLANG', os.getenv('OUTLANG'))
+    genlang = os.getenv('OUTLANG')
+
+os.system("export GENLANG={}".format(genlang))
