@@ -1,9 +1,6 @@
 #! /usr/bin/env bash
 
-if [[ "$OUTLANG"=="swift" ]]
-then export GENLANG="swift4"
-else export GENLANG="$OUTLANG"
-fi
+python3 swiftenv.py
 
 echo $OUTLANG
 echo $GENLANG
