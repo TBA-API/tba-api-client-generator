@@ -8,7 +8,7 @@ export OPTIONS="-i $SPEC_FILE -g $GENLANG -o $REPO_NAME -c configs/$OUTLANG-conf
 
 
 if [[ "$OUTLANG"==="python" || "$OUTLANG"==="csharp" || "$OUTLANG"==="go" ]] ; then
-  export OPTIONS="$OPTIONS --package-version $APIVERSION"
+  export OPTIONS="$OPTIONS --additional-properties packageVersion=$APIVERSION"
 elif [[ "$OUTLANG"==="javascript" ]]; then
   export OPTIONS="$OPTIONS --project-version $APIVERSION"
 elif [[ "$OUTLANG"==="swift" ]]; then
