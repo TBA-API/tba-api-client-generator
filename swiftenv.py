@@ -4,4 +4,4 @@ if os.getenv('OUTLANG') == 'swift':
 else:
     genlang = os.getenv('OUTLANG')
 
-os.system("export GENLANG={}".format(genlang))
+open('genlang', 'w').write(genlang)

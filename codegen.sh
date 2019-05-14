@@ -2,6 +2,8 @@
 
 python3 swiftenv.py
 
+export GENLANG=cat genlang
+
 echo $OUTLANG
 echo $GENLANG
 
