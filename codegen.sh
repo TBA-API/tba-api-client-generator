@@ -1,9 +1,7 @@
 #! /usr/bin/env bash
 
-if [[ "$OUTLANG"=="swift" ]]; then
-    export GENLANG="swift4"
-else
-    export GENLANG="$OUTLANG"
+if [[ "$OUTLANG"=="swift" ]]; then export GENLANG="swift4"
+else export GENLANG="$OUTLANG"
 fi
 
 export OPTIONS="-i $SPEC_FILE -g $GENLANG -o $REPO_NAME -c configs/$OUTLANG-config.json --skip-validate-spec"
