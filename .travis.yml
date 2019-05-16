@@ -26,7 +26,7 @@ install:
 - export APIVERSION=`curl -s $SPEC_FILE | jq -r '.info.version'`
 before_script:
 - export REPO_NAME="tba-api-client-$OUTLANG"
- - git clone https://$USER_NAME:$GIT_TOKEN@github.com/$GITHUB_ORG/$REPO_NAME.git
+- git clone https://$USER_NAME:$GIT_TOKEN@github.com/$GITHUB_ORG/$REPO_NAME.git
 script:
 - "./codegen.sh"
 after_success:
