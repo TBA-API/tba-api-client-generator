@@ -7,7 +7,7 @@ addons:
     - jq
 env:
   global:
-  - SPEC_FILE: https://tba-firebase-test-tweirtx.appspot.com/swagger/api_v3.json
+  - SPEC_FILE: https://raw.githubusercontent.com/tweirtx/the-blue-alliance/master/static/swagger/api_v3.json
   - USER_NAME: tweirtx
   - GITHUB_ORG: tba-api-test
   - secure: "aHZ0fDjKoe+YutZT1t6zWdkGJkrOhEHicxurF3Cc1xrRzKPcRMDUJsZzhmx1pwu0JPgyEMKRlE4sgcBjlNR2Cvg5RDqyefi/baS0DqMm73CtQEeRZMj+wM6PF6d46E0FkdeyWvHxdw0Eg4KH7qFQrIhl4WMBYvgBnootnrnTdxd8iMYHULJS5VAE+nPrX6akqCDVxJqFSZfM2cTs/BAN12U3kZfc47S72ISihU3P/20xQP/90iXBoyBG2hmql/r0cpf1HdsXzLoABsuI+bOT1m9lWEr/YSrVc2PeES22cg87vjDVfzPRi/H8gfFEH7HGHJ4/JFKPSS9WzUzJVEqNC5vHo2sEM8nAs2dwdUbNGJiKglx4hNuUZLS308HE6qpRIU/nnR9gmS4z4qVuHo8LjCrIosszhzkjdV1lfho44Tk+dSmDTJvgqF1tUi02Cge9q7bUXtIqC2ioOBTXmd2ejKQbd2ecSEB0Gz7qsNZaN9TJUXif0Krb9Ey10oQnIvbBBIo1Zk/cnLkytVcTnJIxIzXCa+sGnMjXiYoz33B6Qqaf0z2YWAJsWx+LqneFqQSw+WyApW2TbmNZJ1iZ1Jg84SA1js99I/cV+SVnCr/2hTauA7ZvxRou4xBVE9FR3k8G4s4GXaYPSjAxFxy2xdUv56Rzk2Yh/TwkEQS/7czwR/M="
