@@ -6,7 +6,6 @@ export GENLANG=$(cat genlang)
 
 export OPTIONS="-i $SPEC_FILE -g $GENLANG -o $REPO_NAME -c configs/$OUTLANG-config.json --skip-validate-spec"
 
-
 export OPTIONS="$OPTIONS --additional-properties packageVersion=$APIVERSION"
 echo $OPTIONS
 echo $APIVERSION
