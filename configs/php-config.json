@@ -4,5 +4,7 @@
   "invokerPackage"          : "TBA-API\\v3client",
   "apiPackage"              : "TBA-API\\v3client\\api",
   "modelPackage"            : "TBA-API\\v3client\\model",
-  "artifactId"              : "tba-api-v3client"
+  "artifactId"              : "tba-api-v3client",
+  "gitUserId"               : "TBA-API",
+  "gitRepoId"               : "tba-api-client-php"
 }
