@@ -1,10 +1,8 @@
 {
   "hideGenerationTimestamp" : "true",
-  "packagePath"             : "TBAAPIClient",
-  "invokerPackage"          : "TBAAPI\\Client",
-  "apiPackage"              : "TBAAPI\\Client\\api",
-  "modelPackage"            : "TBAAPI\\Client\\model",
-  "artifactId"              : "tba-api-v3client",
-  "gitUserId"               : "fletch3555",
-  "gitRepoId"               : "tba-api-client-php"
+  "packageName"             : "TBA-API-v3client",
+  "invokerPackage"          : "TBA-API\\v3client",
+  "apiPackage"              : "TBA-API\\v3client\\api",
+  "modelPackage"            : "TBA-API\\v3client\\model",
+  "artifactId"              : "tba-api-v3client"
 }
