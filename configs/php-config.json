@@ -1,9 +1,9 @@
 {
   "hideGenerationTimestamp" : "true",
   "packageName"             : "TBA-API-v3client",
-  "invokerPackage"          : "TBA-API\\v3client",
-  "apiPackage"              : "TBA-API\\v3client\\api",
-  "modelPackage"            : "TBA-API\\v3client\\model",
+  "invokerPackage"          : "TBAAPI\\v3client",
+  "apiPackage"              : "TBAAPI\\v3client\\api",
+  "modelPackage"            : "TBAAPI\\v3client\\model",
   "artifactId"              : "tba-api-v3client",
   "gitUserId"               : "tba-api",
   "gitRepoId"               : "tba-api-client-php"
