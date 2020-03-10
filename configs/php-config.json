@@ -5,6 +5,6 @@
   "apiPackage"              : "TBA-API\\v3client\\api",
   "modelPackage"            : "TBA-API\\v3client\\model",
   "artifactId"              : "tba-api-v3client",
-  "gitUserId"               : "TBA-API",
+  "gitUserId"               : "tba-api",
   "gitRepoId"               : "tba-api-client-php"
 }
