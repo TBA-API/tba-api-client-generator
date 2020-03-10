@@ -1,5 +1,5 @@
 {
-	"gemName": "tba-api-client-ruby",
+	"gemName": "tba-api-v3client",
 	"moduleName": "TBA API v3 Ruby Client",
 	"gemHomePage": "https://thebluealliance.com",
 	"gemSummary": "A Ruby wrapper for The Blue Alliance",
