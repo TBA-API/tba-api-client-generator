@@ -17,7 +17,7 @@ env:
   - OUTLANG=php
   - OUTLANG=python
   - OUTLANG=javascript
-  - OUTLANG=csharp
+  - OUTLANG=csharp-netcore
   - OUTLANG=swift
   - OUTLANG=ruby
   - OUTLANG=go
