@@ -1,5 +1,6 @@
 {
   "hideGenerationTimestamp": "true",
+  "netCoreProjectFile": "true",
   "packageName" : "TBAAPI.V3Client",
   "packageGuid": "62BADEDE-E7D9-48EA-95BF-79D7812A5068",
   "packageVersion": "$API_VERSION"
