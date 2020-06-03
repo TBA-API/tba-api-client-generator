@@ -21,6 +21,7 @@ env:
   - OUTLANG=swift
   - OUTLANG=ruby
   - OUTLANG=go
+  - OUTLANG=dart
 install:
 - npm install @openapitools/openapi-generator-cli -g
 - export APIVERSION=`wget $SPEC_FILE && cat api_v3.json | jq -r '.info.version'`
