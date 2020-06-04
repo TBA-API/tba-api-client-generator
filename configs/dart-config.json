@@ -3,5 +3,5 @@
   "pubAuthorEmail" : "tba-api@thefletcher.net",
   "pubDescription" : "(Unofficial) client library for the TheBlueAlliance.com API",
   "pubHomepage" : "https://github.com/TBA-API/tba-api-client-dart",
-  "pubName" : "TBA-API-Client"
+  "pubName" : "tba_api_client"
 }
