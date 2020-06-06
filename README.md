@@ -1,3 +1,2 @@
 # tba-api-client-generator
 
-
